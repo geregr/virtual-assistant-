@@ -36,6 +36,7 @@
     function read(text){
     var speech = new SpeechSynthesisUtterance();
     speech.text = text;
+    speech.text='hi how can I help you?'
     if(text.includes('time'))
     speech.text = 'It is '+new Date().getHours() + " " + new Date().getMinutes()+" right now";
     else if(text.includes('my birthday'))
@@ -143,7 +144,11 @@
         else if(text=='pisces'){
             speech.text='yes sir'
         }
-//    else if(text.includes('yeah'||text.includes('yes'))){
+    else if(text.includes('mean')){
+        speech.text='please wait'
+//             }  
+    window.location.href="https://www.google.com/search?q="+text+"&rlz=1C1JZAP_enCA912CA912&oq=ko&aqs=chrome..69i57j35i39l2j0j69i60l3j69i61.598j0j7&sourceid=chrome&ie=UTF-8"}
+    //    else if(text.includes('yeah'||text.includes('yes'))){
 //             window.location.href="https://www.google.com/search?q="+text+"&rlz=1C1JZAP_enCA912CA912&oq=ko&aqs=chrome..69i57j35i39l2j0j69i60l3j69i61.598j0j7&sourceid=chrome&ie=UTF-8"}  
 else if(text.includes('okay')){
     speech.text='Great'
@@ -157,7 +162,50 @@ else{speech.text='I do not understand'}
 
     //    })
     </script>
-
+<style>
+    #preloader_1 {
+        position:relative;
+        margin:40px;
+    }
+    #preloader_1 span {
+        display:block;
+        bottom:0;
+        width:9px;
+        height:5px;
+        background:#9b59b6;
+        position:absolute;
+        animation:preloader_1 1.5s infinite ease-in-out;
+    }
+    #preloader_1 span:nth-child(2){
+        left:11px;
+        animation-delay:.2s;
+    }
+    #preloader_1 span:nth-child(3){
+        left:22px;
+        animation-delay:.4s;
+    }
+    #preloader_1 span:nth-child(4){
+        left:33px;
+        animation-delay:.6s;
+    }
+    #preloader_1 span:nth-child(5){
+        left:44px;
+        animation-delay:.8s;
+    }
+    @keyframes preloader_1 {
+        0% {height:5px;transform:translateY(0px);background:#9b53b6;}
+        25% {height:30px;transform:translateY(15px);background:#3498db;}
+        50% {height:5px;transform:translateY(0px);background:#9b53b6;}
+        100% {height:5px;transform:translateY(0px);background:#9b53b6;}
+    }
+</style>
+<div id="preloader_1">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
     <style>
         body{
     justify-content: center;
